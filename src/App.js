@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { Navbar } from './components/Navbar';
+import { loadCategories } from './slices/categoriesSlice';
+import { Routes, Route } from 'react-router-dom';
+import { CategoryView } from './views/CategoryView';
+import { CartView } from './views/CartView';
 import './App.css';
+import { getAllCart, loadCart } from './slices/cartSlice';
 
 function App() {
+
+  const categories = useSelector(state => state.categories.data);
+  const cart = useSelector( getAllCart() );
+
+  const dispatch = useDispatch();
+
+  useEffect ( () => {
+    dispatch( loadCategories() );
+  }, [dispatch]);
+
+  useEffect ( () => {
+    dispatch( loadCart() );
+  }, [dispatch]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar categories={categories} cart={cart} />
+      <Routes>
+        <Route path="categories/:category" element={<CategoryView />}></Route>
+        <Route path="cart" element={<CartView />}></Route>
+      </Routes>
     </div>
   );
 }
