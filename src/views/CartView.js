@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
-import { delCart, getAllCart, updateCart } from '../slices/cartSlice';
+import { delCart, getAllCart, getTotalCart, updateCart } from '../slices/cartSlice';
 import { useDispatch } from 'react-redux';
+import { utility } from '../shared/utility';
 
 
 export function CartView() {
@@ -16,6 +17,8 @@ export function CartView() {
     const updateCartHandler = (el, event) => {
             dispatch(updateCart({product: el, qty: event.target.value}));
     }
+
+    const total = useSelector( getTotalCart() )
 
     return (
         <div>
@@ -44,17 +47,24 @@ export function CartView() {
                                     <td><button className="btn btn-danger" onClick={ () => delCartHandler(el)}>Cancella</button></td>
                                     <td><img className="card-img-top" src={el.image} alt={el.title}/></td>
                                     <td>{el.title}</td>
-                                    <td>{el.price}€</td>
+                                    <td>{utility.formatPrice(el.price)}€</td>
                                     <td>
                                         <input type="number" value={el.qty} onChange={ ($event) => updateCartHandler(el, $event) }/>
                                     </td>
-                                    <td>{el.qty * el.price}€</td>
+                                    <td>{utility.formatPrice(el.qty * el.price)}€</td>
                                 </tr>
                             )
                         })
                     }
         
                 </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td colSpan="6"></td>
+                        <td>{utility.formatPrice(total)}€</td>
+                    </tr>
+                </tfoot>
 
             </table>
         </div>

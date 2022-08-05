@@ -137,28 +137,28 @@
   ],
   "cart": [
     {
+      "product_id": 8,
+      "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
+      "price": 10.99,
+      "image": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
+      "qty": "2",
+      "id": 10
+    },
+    {
       "product_id": 6,
       "title": "Solid Gold Petite Micropave ",
       "price": 168,
       "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
-      "qty": "1",
-      "id": 4
+      "qty": "3",
+      "id": 11
     },
     {
-      "product_id": 14,
-      "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
-      "price": 999.99,
-      "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
-      "qty": "1",
-      "id": 5
-    },
-    {
-      "product_id": 15,
-      "title": "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
-      "price": 56.99,
-      "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
-      "qty": "2",
-      "id": 6
+      "product_id": 13,
+      "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
+      "price": 599,
+      "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
+      "qty": "3",
+      "id": 12
     },
     {
       "product_id": 14,
@@ -166,7 +166,7 @@
       "price": 999.99,
       "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
       "qty": 1,
-      "id": 7
+      "id": 13
     }
   ]
 }

@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom';
-import cartSlice from '../slices/cartSlice';
 
 export function Navbar( {categories, cart} ) {
 
